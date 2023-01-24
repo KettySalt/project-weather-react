@@ -1,0 +1,136 @@
+.Weather h1 {
+  color: #464077;
+}
+.Weather a {
+  color: #7069a9;
+}
+.Weather a:hover {
+  color: #7069a9;
+}
+
+.Weather .form-search {
+  margin: 20px auto 15px auto;
+  text-align: center;
+}
+.Weather .input-box {
+  position: relative;
+}
+.Weather .input-box .search {
+  color: rgb(89, 99, 116);
+  border: solid 1px #7069a9;
+  border-radius: 3px;
+  padding-left: 8px;
+}
+.Weather .input-box .search:focus {
+  outline: none;
+  border-radius: 3px;
+  border: solid 1.5px #b378bc;
+}
+.Weather .input-box i {
+  position: absolute;
+  right: 9px;
+  top: 11px;
+  color: #ced4da;
+}
+.Weather .card {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 45%;
+  margin: 10px auto;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.Weather .details {
+  font-size: 10px;
+  line-height: 22px;
+  text-align: center;
+  border-left: solid 1px #7069a9;
+}
+.Weather .impotant {
+  font-weight: bold;
+}
+.Weather .day {
+  font-size: 12px;
+}
+.Weather .temper {
+  font-size: 35px;
+  letter-spacing: 0;
+}
+.Weather .week {
+  text-align: center;
+  margin: 0 auto 25px auto;
+}
+.Weather .today {
+  margin: 0 auto 30px auto;
+}
+.Weather .card-body {
+  position: relative;
+  margin-left: 30px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+.Weather .coder {
+  position: absolute;
+  left: 3px;
+  bottom: -38px;
+  font-size: 12px;
+  opacity: 75%;
+}
+.Weather .units {
+  font-size: 10px;
+  vertical-align: 16px;
+}
+.Weather .degree {
+  text-decoration: none;
+}
+.Weather .form-check-label {
+  font-size: 12px;
+}
+.Weather .data,
+.Weather .day {
+  padding-left: 0;
+  list-style: none;
+}
+
+.Weather li:first-letter {
+  text-transform: capitalize;
+}
+.Weather .temper .active {
+  color: black;
+  cursor: default;
+}
+.Weather .search-batton {
+  background-color: #7069a9;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  position: relative;
+}
+.Weather .search-batton:hover {
+  opacity: 0.8;
+  top: -4px;
+}
+.Weather .current-batton {
+  background-color: #b378bc;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  position: relative;
+}
+.Weather .current-batton:hover {
+  opacity: 0.8;
+  top: -4px;
+}
+.Weather .weather-forecast-temperature-min {
+  opacity: 0.5;
+  font-size: 14px;
+}
+.Weather .weather-forecast-temperatures {
+  font-size: 14px;
+}
+.Weather .forcast-line {
+  margin: auto;
+}

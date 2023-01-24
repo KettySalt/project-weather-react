@@ -7,12 +7,43 @@ import "bootstrap/dist/css/bootstrap.css";
 export default function Weather() {
   let [city, setCity] = useState("");
   let [cityWeather, setCityWeather] = useState({});
+  let week = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thurthday",
+    "Friday",
+    "Saturday",
+  ];
+  //   let shortWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let monthes = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let now = new Date();
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   function showWeather(response) {
-    // alert(`In ${response.data.city} is ${response.data.temperature.current} ℃`);
     setCityWeather({
       city: response.data.city,
-      day: "1 Jan, Sunday",
       description: response.data.condition.description,
       temperature: Math.round(response.data.temperature.current),
       like: Math.round(response.data.temperature.feels_like),
@@ -79,7 +110,10 @@ export default function Weather() {
               <div className="col-5">
                 <h1>{cityWeather.city}</h1>
                 <ul className="day">
-                  <li>{cityWeather.day}</li>
+                  <li>
+                    {now.getDate()} {monthes[now.getMonth()]},{" "}
+                    {week[now.getDay()]} {hours}:{minutes}
+                  </li>
                   <li>{cityWeather.description}</li>
                 </ul>
               </div>

@@ -75,7 +75,7 @@ export default function Weather(props) {
     let forecastWeather = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showWeather);
     axios.get(forecastWeather).then(displayForecast);
-  }, []);
+  });
 
   return (
     <div className="Weather" onLoad={handleSubmit}>

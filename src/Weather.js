@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Weather.css";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap-grid.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-export default function Weather() {
-  let [city, setCity] = useState("");
+export default function Weather(props) {
+  let [city, setCity] = useState(props.city);
   let [cityWeather, setCityWeather] = useState({});
   let week = [
     "Sunday",
@@ -53,22 +53,32 @@ export default function Weather() {
       imgUrl: response.data.condition.icon_url,
     });
   }
+
+  let apiKey = "3te112f50837749e5bfeo6adf636e68f";
+
+  function displayForecast(response) {
+    let forecast = response.data.daily;
+    console.log(forecast);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
-    if (city.length > 0) {
-      let apiKey = "3te112f50837749e5bfeo6adf636e68f";
-      let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-      axios.get(apiUrl).then(showWeather);
-    } else {
-      alert("Enter a city, please.");
-    }
+    let apiNewUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiNewUrl).then(showWeather);
   }
   function userCity(event) {
     setCity(event.target.value);
   }
 
+  useEffect(() => {
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    let forecastWeather = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showWeather);
+    axios.get(forecastWeather).then(displayForecast);
+  }, []);
+
   return (
-    <div className="Weather">
+    <div className="Weather" onLoad={handleSubmit}>
       <div className="contenier Weather">
         <div className="card">
           <div className="card-body">
@@ -147,6 +157,7 @@ export default function Weather() {
                 </ul>
               </div>
             </div>
+            <div className="week" id="forecast"></div>
           </div>
 
           <p className="coder">

@@ -3,7 +3,7 @@
 import Weather from "./Weather";
 
 function App() {
-  return <Weather />;
+  return <Weather city="Kyiv" />;
 }
 
 export default App;

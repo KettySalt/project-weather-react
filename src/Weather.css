@@ -32,16 +32,6 @@
   top: 11px;
   color: #ced4da;
 }
-.Weather .card {
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  width: 45%;
-  margin: 10px auto;
-  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-}
 
 .Weather .details {
   font-size: 10px;
@@ -72,13 +62,7 @@
   margin-right: 50px;
   margin-bottom: 50px;
 }
-.Weather .coder {
-  position: absolute;
-  left: 3px;
-  bottom: -38px;
-  font-size: 12px;
-  opacity: 75%;
-}
+
 .Weather .units {
   font-size: 10px;
   vertical-align: 16px;

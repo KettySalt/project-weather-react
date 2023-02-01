@@ -15,7 +15,11 @@ export default function WeatherInfo(props) {
       </div>
       <div className="col-3 align-self-center">
         <h2 className="temper">
-          <img src={props.data.imgUrl} alt="" width="75" />
+          <img
+            src={props.data.imgUrl}
+            alt={props.data.description}
+            width="75"
+          />
           <WeatherTemperature celsius={props.data.temperature} />
         </h2>
       </div>

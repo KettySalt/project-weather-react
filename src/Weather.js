@@ -67,7 +67,7 @@ export default function Weather(props) {
                   style={{ width: "100%", height: "40px" }}
                 />
               </div>
-              <div className="col-2">
+              {/* <div className="col-2">
                 <input
                   className="current-batton"
                   type="button"
@@ -75,7 +75,7 @@ export default function Weather(props) {
                   style={{ width: "100%", height: "40px" }}
                   id="current"
                 />
-              </div>
+              </div> */}
             </div>
           </form>
           <WeatherInfo data={cityWeather} />
